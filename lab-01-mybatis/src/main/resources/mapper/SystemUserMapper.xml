@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.lab01.mapper.SystemUserMapper">
+
+    <resultMap id="systemUser" type="com.example.lab01.bean.SystemUser">
+        <id property="id" column="id"/>
+        <result property="username" column="username"/>
+    </resultMap>
+
+    <resultMap id="systemRole" type="com.example.lab01.bean.SystemRole">
+        <id property="id" column="roleId"/>
+        <result property="name" column="name"/>
+    </resultMap>
+
+    <resultMap id="usersOfRole" type="com.example.lab01.bean.UsersOfRole">
+        <association property="role" javaType="com.example.lab01.bean.SystemRole" resultMap="systemRole"/>
+        <collection property="users" javaType="java.util.List" column="id" ofType="com.example.lab01.bean.SystemUser" select="selectUsersByRole"/>
+    </resultMap>
+
+    <resultMap id="usersOfRole2" type="com.example.lab01.bean.UsersOfRole2">
+        <id property="roleId" column="roleId"/>
+        <result property="name" column="name"/>
+        <collection property="users"  ofType="com.example.lab01.bean.SystemUser" resultMap="systemUser"/>
+    </resultMap>
+
+    <resultMap id="usersOfRole3" type="com.example.lab01.bean.UsersOfRole3">
+        <id property="id" column="roleId"/>
+        <result property="name" column="name"/>
+        <collection property="users"  ofType="com.example.lab01.bean.SystemUser" resultMap="systemUser"/>
+    </resultMap>
+
+    <resultMap id="usersOfRole4" type="com.example.lab01.bean.UsersOfRole4">
+        <association property="role" javaType="com.example.lab01.bean.SystemRole">
+            <id property="id" column="roleId"/>
+            <result property="name" column="name"/>
+        </association>
+        <collection property="users" column="roleId" ofType="com.example.lab01.bean.SystemUser"  select="selectUsersByRole"/>
+    </resultMap>
+
+    <resultMap id="usersOfRole5" type="com.example.lab01.bean.UsersOfRole5">
+        <id property="roleId" column="roleId" />
+        <association property="role" javaType="com.example.lab01.bean.SystemRole" resultMap="systemRole"/>
+        <collection property="users"  javaType="java.util.List"  resultMap="systemUser"/>
+    </resultMap>
+
+    <select id="selectAllUser" resultType="com.example.lab01.bean.SystemUser">
+        SELECT id, username FROM system_user
+    </select>
+
+
+    <select id="selectUsersByRole" resultMap="systemUser">
+
+        SELECT su.id, su.username FROM system_user AS su
+        INNER JOIN system_user_role AS sur
+        ON su.id = sur.user_id
+        WHERE sur.role_id = #{roleId}
+
+    </select>
+
+    <select id="selectUsersOfRole" resultMap="usersOfRole">
+
+        SELECT sr.id, sr.name FROM system_role AS sr
+        WHERE sr.id = #{roleId}
+
+    </select>
+
+    <select id="selectUsersOfRole2" resultMap="usersOfRole2">
+
+        SELECT sr.id AS roleId, sr.name, su.id, su.username
+        FROM system_user AS su
+                 INNER JOIN system_user_role AS sur
+                            ON su.id = sur.user_id
+                 INNER JOIN system_role AS sr
+                            ON sr.id = sur.role_id
+        WHERE sur.role_id = #{roleId}
+
+    </select>
+
+    <select id="selectUsersOfRole3" resultMap="usersOfRole3">
+
+        SELECT sr.id as roleId, sr.name, su.id, su.username
+        FROM system_user AS su
+                 INNER JOIN system_user_role AS sur
+                            ON su.id = sur.user_id
+                 INNER JOIN system_role AS sr
+                            ON sr.id = sur.role_id
+        WHERE sur.role_id = #{roleId}
+
+    </select>
+
+
+    <select id="selectUsersOfRole4" resultMap="usersOfRole4">
+
+        SELECT id as roleId, name FROM system_role WHERE id = #{roleId}
+
+    </select>
+
+    <select id="selectUsersOfRole5" resultMap="usersOfRole5">
+
+        SELECT sr.id AS roleId, sr.name, su.id, su.username
+        FROM system_user AS su
+                 INNER JOIN system_user_role AS sur
+                            ON su.id = sur.user_id
+                 INNER JOIN system_role AS sr
+                            ON sr.id = sur.role_id
+        WHERE sur.role_id = #{roleId}
+
+    </select>
+</mapper>
