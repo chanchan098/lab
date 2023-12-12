@@ -39,13 +39,13 @@ public class ProductsearchappApplication {
         SpringApplication.run(ProductsearchappApplication.class, args);
     }
 
-    @PreDestroy
+//    @PreDestroy
     public void deleteIndex() {
         esOps.indexOps(Product.class).delete();
     }
 
 
-    @PostConstruct
+//    @PostConstruct
     public void buildIndex() {
 
         esOps.indexOps(Product.class).refresh();

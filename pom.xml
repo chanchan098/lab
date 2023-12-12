@@ -17,7 +17,9 @@
     <modules>
 <!--        <module>lab-01-mybatis</module>-->
 <!--        <module>lab-02-proxy</module>-->
-        <module>lab-03-elasticsearch</module>
+<!--        <module>lab-03-elasticsearch</module>-->
+<!--        <module>lab-04-netty</module>-->
+        <module>lab-05-spring-transaction</module>
     </modules>
 
 </project>

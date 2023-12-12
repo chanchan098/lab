@@ -7,11 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lab-03-elasticsearch" />
+        <module name="lab-05-spring-transaction" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lab-03-elasticsearch" target="8" />
+      <module name="lab-04-netty" target="8" />
+      <module name="lab-05-spring-transaction" target="8" />
       <module name="labs" target="8" />
     </bytecodeTargetLevel>
   </component>
