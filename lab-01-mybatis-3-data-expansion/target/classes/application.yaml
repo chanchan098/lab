@@ -1,0 +1,24 @@
+server:
+  port: 7070
+## 数据源配置
+spring:
+  datasource: # 数据库的数据配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # url不用换行，由于数据太长了这里换行了
+    url: jdbc:mysql://localhost:3307/employees?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    username: root
+    password: 123456
+## mybatis 配置
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.example.lab01.bean #实体类取别名
+  configuration:
+    ## 下划线转驼峰配置
+    map-underscore-to-camel-case: true
+## 显示dao 执⾏sql语句
+logging:
+  level:
+    com:
+      example:
+        lab01:
+          mapper: debug # 改成你的dao接口文件所在包路径可以打印出sql语句

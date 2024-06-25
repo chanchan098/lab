@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.dataExpansion.mapper.SystemMapper">
+
+    <resultMap id="employees" type="com.example.dataExpansion.bean.Employee">
+        <id property="id" column="id"/>
+    </resultMap>
+
+    <resultMap id="rmSalary" type="com.example.dataExpansion.bean.Salary">
+        <id property="empNo" column="emp_no" />
+        <result property="salary" column="salary"/>
+        <result property="fromDate" column="from_date"/>
+        <result property="toDate" column="to_date"/>
+    </resultMap>
+
+    <insert id="insertEmployees" parameterType="java.util.List">
+
+        INSERT INTO `employees`(`emp_no`,`birth_date`,`first_name`,`last_name`,`gender`,`hire_date`)
+        VALUES
+        <foreach item="item" index="index" collection="employees" separator=",">
+            (#{item.empNo},
+            #{item.birthDate},
+            #{item.firstName},
+            #{item.lastName},
+            #{item.gender},
+            #{item.hireDate})
+        </foreach>;
+
+    </insert>
+
+    <select id="queryEmployees" resultType="com.example.dataExpansion.bean.Employee">
+        SELECT * FROM employees
+    </select>
+
+    <select id="queryEmployeeIds" resultType="java.lang.Integer">
+        SELECT emp_no FROM employees
+    </select>
+
+    <select id="querySalaries" resultMap="rmSalary">
+        SELECT * FROM salaries
+    </select>
+
+    <insert id="insertSalaries" parameterType="java.util.List">
+
+        INSERT INTO `salaries`(`emp_no`,`salary`,`from_date`,`to_date`)
+        VALUES
+        <foreach item="item" index="index" collection="salaries" separator=",">
+            (#{item.empNo},
+            #{item.salary},
+            #{item.fromDate},
+            #{item.toDate})
+        </foreach>;
+
+    </insert>
+
+
+    <select id="queryMaxNoOfEmployees" resultType="java.lang.Integer">
+
+        SELECT MAX(emp_no) FROM employees
+
+    </select>
+
+</mapper>

@@ -13,5 +13,4 @@ public interface SystemUserMapper {
     UsersOfRole3 selectUsersOfRole3(int roleId);
     UsersOfRole4 selectUsersOfRole4(int roleId);
     UsersOfRole5 selectUsersOfRole5(int roleId);
-
 }

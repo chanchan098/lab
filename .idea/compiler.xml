@@ -7,19 +7,33 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="lab-05-spring-transaction" />
+        <module name="lab-01-mybatis-3-data-expansion" />
+        <module name="lab-12-sc-k8s" />
+        <module name="lab-01-mybatis" />
+        <module name="stater-test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="lab-01-mybatis" target="8" />
+      <module name="lab-01-mybatis-2-data-expansion" target="8" />
+      <module name="lab-01-mybatis-3-data-expansion" target="8" />
       <module name="lab-03-elasticsearch" target="8" />
-      <module name="lab-04-netty" target="8" />
-      <module name="lab-05-spring-transaction" target="8" />
+      <module name="lab-08-java" target="8" />
+      <module name="lab-09-java-stream-api" target="11" />
+      <module name="lab-10-java-io" target="11" />
+      <module name="lab-11-reactive-streams" target="11" />
+      <module name="lab-12-sc-k8s" target="11" />
       <module name="labs" target="8" />
+      <module name="stater-test" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="lab-01-mybatis" options="-parameters" />
+      <module name="lab-01-mybatis-2-data-expansion" options="-parameters" />
+      <module name="lab-01-mybatis-3-data-expansion" options="-parameters" />
       <module name="lab-03-elasticsearch" options="-parameters" />
+      <module name="lab-12-sc-k8s" options="-parameters" />
     </option>
   </component>
 </project>

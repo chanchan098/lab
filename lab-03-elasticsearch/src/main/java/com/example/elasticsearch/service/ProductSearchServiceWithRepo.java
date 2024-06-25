@@ -2,7 +2,7 @@ package com.example.elasticsearch.service;
 import java.util.List;
 
 import com.example.elasticsearch.bean.Product;
-import com.example.elasticsearch.repository.ProductRepository;
+import com.example.elasticsearch.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
