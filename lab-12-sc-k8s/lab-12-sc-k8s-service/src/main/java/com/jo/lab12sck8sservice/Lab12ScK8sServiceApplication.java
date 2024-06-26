@@ -1,8 +1,7 @@
-package com.jo.lab12sck8s;
+package com.jo.lab12sck8sservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Profile;
 //import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 //import org.springframework.cloud.openfeign.EnableFeignClients;
 
@@ -10,10 +9,10 @@ import org.springframework.context.annotation.Profile;
 //@EnableFeignClients
 //@EnableDiscoveryClient
 @SpringBootApplication
-public class Lab12ScK8sApplication {
+public class Lab12ScK8sServiceApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Lab12ScK8sApplication.class, args);
+        SpringApplication.run(Lab12ScK8sServiceApplication.class, args);
     }
 
 }

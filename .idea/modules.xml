@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/lab-01-mybatis/lab-01-mybatis.iml" filepath="$PROJECT_DIR$/lab-01-mybatis/lab-01-mybatis.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab-01-mybatis-3-data-expansion/lab-01-mybatis-3-data-expansion.iml" filepath="$PROJECT_DIR$/lab-01-mybatis-3-data-expansion/lab-01-mybatis-3-data-expansion.iml" />
       <module fileurl="file://$PROJECT_DIR$/lab-12-sc-k8s/lab-12-sc-k8s.iml" filepath="$PROJECT_DIR$/lab-12-sc-k8s/lab-12-sc-k8s.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lab-12-sc-k8s/lab-12-sc-k8s-service/lab-12-sc-k8s-service.iml" filepath="$PROJECT_DIR$/lab-12-sc-k8s/lab-12-sc-k8s-service/lab-12-sc-k8s-service.iml" />
       <module fileurl="file://$PROJECT_DIR$/labs.iml" filepath="$PROJECT_DIR$/labs.iml" />
       <module fileurl="file://$PROJECT_DIR$/stater-test/stater-test.iml" filepath="$PROJECT_DIR$/stater-test/stater-test.iml" />
     </modules>

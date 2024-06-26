@@ -1,7 +1,5 @@
-package com.jo.lab12sck8s;
+package com.jo.lab12sck8sservice;
 
-import lombok.Data;
-import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("mysql-config")
