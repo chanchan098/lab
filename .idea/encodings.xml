@@ -4,6 +4,7 @@
     <file url="file://$PROJECT_DIR$/lab-01-mybatis-3-data-expansion/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab-01-mybatis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab-03-elasticsearch/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/lab-12-sc-k8s/lab-12-sc-k8s-caller/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/lab-12-sc-k8s/lab-12-sc-k8s-service/src/main/java" charset="UTF-8" />
   </component>
 </project>
