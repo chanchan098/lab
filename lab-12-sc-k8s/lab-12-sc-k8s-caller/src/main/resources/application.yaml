@@ -1,2 +1,13 @@
+#spring:
+#  profiles:
+#    active: local, dev, k8s
+#--spring.profiles.active=local, dev
+
+spring:
+  application:
+    name: lab-12-sc-k8s
+  profiles:
+    active: local,dev
+
 server:
   port: 8998

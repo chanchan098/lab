@@ -1,14 +1,15 @@
-spring:
-  application:
-    name: lab-12-sc-k8s
-  cloud:
-    kubernetes:
-      config:
-        namespace: lab-12-sc-k8s
-        enable-api: true
-        enabled: true
-      client:
-        namespace: lab-12-sc-k8s
+#spring:
+#  profiles:
+#    active: local, dev, k8s
+#--spring.profiles.active=local, dev
 
-  profiles:
-    active: local
+# in case of running outside cluster
+#spring:
+#  cloud:
+#    kubernetes:
+#      config:
+#        namespace: lab-12-sc-k8s
+#        enable-api: true
+#        enabled: true
+#      client:
+#        namespace: lab-12-sc-k8s

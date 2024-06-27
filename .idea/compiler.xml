@@ -10,7 +10,6 @@
         <module name="lab-01-mybatis-3-data-expansion" />
         <module name="lab-12-sc-k8s-caller" />
         <module name="lab-12-sc-k8s-service" />
-        <module name="lab-12-sc-k8s" />
         <module name="lab-01-mybatis" />
         <module name="stater-test" />
       </profile>
@@ -24,7 +23,7 @@
       <module name="lab-09-java-stream-api" target="11" />
       <module name="lab-10-java-io" target="11" />
       <module name="lab-11-reactive-streams" target="11" />
-      <module name="lab-12-sc-k8s" target="1.8" />
+      <module name="lab-12-sc-k8s" target="11" />
       <module name="lab-12-sc-k8s-caller" target="11" />
       <module name="lab-12-sc-k8s-service" target="11" />
       <module name="labs" target="8" />

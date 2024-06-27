@@ -1,5 +1,6 @@
 package com.jo.lab12sck8scaller;
 
+import com.jo.lab12sck8scaller.client.ServiceClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,21 +10,28 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.websocket.server.PathParam;
 
 @RestController
-@RequestMapping("home")
-@EnableConfigurationProperties(MySQLConfig.class)
-public class HomeController {
+@RequestMapping("caller")
+public class CallerController {
 
     @Autowired
-    private MySQLConfig mySQLConfig;
+    private ServiceClient client;
 
     @GetMapping
-    public String hello(@PathParam("name") String name){
-        return "hello "+name;
+    public String caller(@PathParam("name") String name){
+        try {
+            return client.home(name);
+        }catch (Exception e){
+            return e.getMessage();
+        }
     }
 
     @GetMapping("mysql-config")
-    public String getMySqlConfig(){
-        return mySQLConfig.toString();
+    public String mysqlConfig(){
+        try {
+            return client.mysqlConfig();
+        }catch (Exception e){
+            return "null from caller";
+        }
     }
 
 }

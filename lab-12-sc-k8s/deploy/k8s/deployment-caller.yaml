@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab-12-sc-k8s-caller
+  labels:
+    app: lab-12-sc-k8s-caller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lab-12-sc-k8s-caller
+  template:
+    metadata:
+      labels:
+        app: lab-12-sc-k8s-caller
+    spec:
+      containers:
+        - name: lab-12-sc-k8s-caller
+          image: 192.168.0.244:5000/lab-12-sc-k8s-caller:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8998
+      #    volumeMounts:
+      #      - name: config
+      #        mountPath: /etc/appconfig
+      #volumes:
+      #  - name: config
+      #    configMap:
+      #      name: lab-12-sc-k8s-service
+      serviceAccountName: api-service-account
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab-12-sc-k8s-caller
+  labels:
+    app: lab-12-sc-k8s-caller
+spec:
+  ports:
+    - port: 8998
+      protocol: TCP
+      nodePort: 30001
+  selector:
+    app: lab-12-sc-k8s-caller
+  type: NodePort
