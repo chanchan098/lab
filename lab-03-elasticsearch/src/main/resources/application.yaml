@@ -1,2 +1,13 @@
 server:
   port: 8999
+
+spring:
+  data:
+    elasticsearch:
+      client:
+        reactive:
+          endpoints: http://localhost:9200 # Elasticsearch服务器地址
+      properties:
+        employeeindex:
+          number_of_shards: 5   # 分片数量
+          number_of_replicas: 1 # 副本数量

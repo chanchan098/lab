@@ -11,7 +11,7 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import com.example.elasticsearch.bean.Product;
-import com.example.elasticsearch.repository.ProductRepository;
+import com.example.elasticsearch.repository.*;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -39,13 +39,13 @@ public class ProductsearchappApplication {
         SpringApplication.run(ProductsearchappApplication.class, args);
     }
 
-    @PreDestroy
+//    @PreDestroy
     public void deleteIndex() {
         esOps.indexOps(Product.class).delete();
     }
 
 
-    @PostConstruct
+//    @PostConstruct
     public void buildIndex() {
 
         esOps.indexOps(Product.class).refresh();

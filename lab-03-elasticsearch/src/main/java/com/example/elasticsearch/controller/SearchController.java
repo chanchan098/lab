@@ -33,7 +33,7 @@ public class SearchController {
     }
 
     @GetMapping("/products")
-    @ResponseBody
+//    @ResponseBody
     public List<Product> fetchByNameOrDesc(@RequestParam(value = "q", required = false) String query) {
         log.info("searching by name {}",query);
         List<Product> products = searchService.processSearch(query) ;
@@ -42,7 +42,7 @@ public class SearchController {
     }
 
     @GetMapping("/suggestions")
-    @ResponseBody
+//    @ResponseBody
     public List<String> fetchSuggestions(@RequestParam(value = "q", required = false) String query) {
         log.info("fetch suggests {}",query);
         List<String> suggests = searchService.fetchSuggestions(query);

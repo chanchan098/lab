@@ -1,3 +1,4 @@
+
 package com.example.lab01.bean;
 
 public class SystemRole {

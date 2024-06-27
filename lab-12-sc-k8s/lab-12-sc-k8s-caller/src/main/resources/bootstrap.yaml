@@ -1,0 +1,10 @@
+# in case of running outside cluster
+#spring:
+#  cloud:
+#    kubernetes:
+#      config:
+#        namespace: lab-12-sc-k8s
+#        enable-api: true
+#        enabled: true
+#      client:
+#        namespace: lab-12-sc-k8s

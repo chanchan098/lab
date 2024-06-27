@@ -22,13 +22,13 @@
     <resultMap id="usersOfRole2" type="com.example.lab01.bean.UsersOfRole2">
         <id property="roleId" column="roleId"/>
         <result property="name" column="name"/>
-        <collection property="users"  ofType="com.example.lab01.bean.SystemUser" resultMap="systemUser"/>
+        <collection property="users" ofType="com.example.lab01.bean.SystemUser" resultMap="systemUser"/>
     </resultMap>
 
     <resultMap id="usersOfRole3" type="com.example.lab01.bean.UsersOfRole3">
         <id property="id" column="roleId"/>
         <result property="name" column="name"/>
-        <collection property="users"  ofType="com.example.lab01.bean.SystemUser" resultMap="systemUser"/>
+        <collection property="users" ofType="com.example.lab01.bean.SystemUser" resultMap="systemUser"/>
     </resultMap>
 
     <resultMap id="usersOfRole4" type="com.example.lab01.bean.UsersOfRole4">
@@ -36,7 +36,7 @@
             <id property="id" column="roleId"/>
             <result property="name" column="name"/>
         </association>
-        <collection property="users" column="roleId" ofType="com.example.lab01.bean.SystemUser"  select="selectUsersByRole"/>
+        <collection property="users" column="roleId" ofType="com.example.lab01.bean.SystemUser" select="selectUsersByRole"/>
     </resultMap>
 
     <resultMap id="usersOfRole5" type="com.example.lab01.bean.UsersOfRole5">
@@ -46,14 +46,14 @@
     </resultMap>
 
     <select id="selectAllUser" resultType="com.example.lab01.bean.SystemUser">
-        SELECT id, username FROM system_user
+        SELECT id, username FROM system_users
     </select>
 
 
     <select id="selectUsersByRole" resultMap="systemUser">
 
-        SELECT su.id, su.username FROM system_user AS su
-        INNER JOIN system_user_role AS sur
+        SELECT su.id, su.username FROM system_users AS su
+        INNER JOIN system_users_role AS sur
         ON su.id = sur.user_id
         WHERE sur.role_id = #{roleId}
 
@@ -69,8 +69,8 @@
     <select id="selectUsersOfRole2" resultMap="usersOfRole2">
 
         SELECT sr.id AS roleId, sr.name, su.id, su.username
-        FROM system_user AS su
-                 INNER JOIN system_user_role AS sur
+        FROM system_users AS su
+                 INNER JOIN system_users_role AS sur
                             ON su.id = sur.user_id
                  INNER JOIN system_role AS sr
                             ON sr.id = sur.role_id
@@ -81,8 +81,8 @@
     <select id="selectUsersOfRole3" resultMap="usersOfRole3">
 
         SELECT sr.id as roleId, sr.name, su.id, su.username
-        FROM system_user AS su
-                 INNER JOIN system_user_role AS sur
+        FROM system_users AS su
+                 INNER JOIN system_users_role AS sur
                             ON su.id = sur.user_id
                  INNER JOIN system_role AS sr
                             ON sr.id = sur.role_id
@@ -100,8 +100,8 @@
     <select id="selectUsersOfRole5" resultMap="usersOfRole5">
 
         SELECT sr.id AS roleId, sr.name, su.id, su.username
-        FROM system_user AS su
-                 INNER JOIN system_user_role AS sur
+        FROM system_users AS su
+                 INNER JOIN system_users_role AS sur
                             ON su.id = sur.user_id
                  INNER JOIN system_role AS sr
                             ON sr.id = sur.role_id

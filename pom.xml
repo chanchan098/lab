@@ -12,12 +12,34 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <revision>1.0-SNAPSHOT</revision>
     </properties>
 
     <modules>
-<!--        <module>lab-01-mybatis</module>-->
-<!--        <module>lab-02-proxy</module>-->
-        <module>lab-03-elasticsearch</module>
+        <module>stater-test</module>
+        <module>lab-01-mybatis</module>
+        <module>lab-01-mybatis-3-data-expansion</module>
+        <!--        <module>lab-02-proxy</module>-->
+<!--        <module>lab-03-elasticsearch</module>-->
+        <!--        <module>lab-04-netty</module>-->
+<!--        <module>lab-05-spring-transaction</module>-->
+<!--        <module>lab-06-reactive-programming</module>-->
+<!--        <module>lab-07-code-generation</module>-->
+<!--        <module>lab-08-java</module>-->
+<!--        <module>lab-09-java-stream-api</module>-->
+<!--        <module>lab-10-java-io</module>-->
+<!--        <module>lab-11-reactive-streams</module>-->
     </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.example</groupId>
+                <artifactId>stater-test</artifactId>
+                <version>${revision}</version>
+<!--                <scope>import</scope>-->
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 </project>

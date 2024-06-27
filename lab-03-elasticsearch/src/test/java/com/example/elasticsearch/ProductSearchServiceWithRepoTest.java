@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 import com.example.elasticsearch.bean.Product;
-import com.example.elasticsearch.service.ProductSearchServiceWithRepo;
+import com.example.elasticsearch.service.*;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

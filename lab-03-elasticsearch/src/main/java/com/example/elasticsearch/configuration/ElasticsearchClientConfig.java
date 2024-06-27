@@ -13,25 +13,25 @@ import org.springframework.data.elasticsearch.repository.config.EnableElasticsea
  * @author Pratik Das
  *
  */
-@Configuration
-@EnableElasticsearchRepositories(basePackages = "com.example.elasticsearch.repository")
-@ComponentScan(basePackages = { "com.example.elasticsearch" })
-public class ElasticsearchClientConfig extends AbstractElasticsearchConfiguration {
-
-    @Override
-    @Bean
-    public RestHighLevelClient elasticsearchClient() {
-
-        final ClientConfiguration clientConfiguration =
-                ClientConfiguration
-                        .builder()
-                        .connectedTo("localhost:9200")
-                        .build();
-
-        return RestClients
-                .create(clientConfiguration)
-                .rest();
-    }
-
-
-}
+//@Configuration
+//@EnableElasticsearchRepositories(basePackages = "com.example.elasticsearch.repository")
+//@ComponentScan(basePackages = { "com.example.elasticsearch" })
+//public class ElasticsearchClientConfig extends AbstractElasticsearchConfiguration {
+//
+//    @Override
+//    @Bean
+//    public RestHighLevelClient elasticsearchClient() {
+//
+//        final ClientConfiguration clientConfiguration =
+//                ClientConfiguration
+//                        .builder()
+//                        .connectedTo("localhost:9200")
+//                        .build();
+//
+//        return RestClients
+//                .create(clientConfiguration)
+//                .rest();
+//    }
+//
+//
+//}
